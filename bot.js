@@ -31,47 +31,6 @@ if (message.content.startsWith('wt')) {
 }
 });
 
-var prefix = ".";
 
-client.on('message', message => {
-var args = message.content.split(' ').slice(1).join(' ');
-    
-
-           if (message.content.startsWith(prefix + "av")) {
-
-			     if (message.author.id !== developers) return;
-
-        var mentionned = message.mentions.users.first();
-
-          var getvalueof;
-
-          var client;
-
-          if(mentionned) {
-
-            getvalueof = mentionned;
-
-          } else {
-
-            getvalueof = message.author;
-
-          }
-
-          let avatar = new Discord.RichEmbed()
-
-          .setColor("#000000")
-
-          .setTitle(`{394029329839283}`)
-
-          .setURL(`${getvalueof.avatarURL}`)
-
-          .setImage(`${getvalueof.avatarURL}`);
-
-                    message.channel.sendEmbed(avatar);
-
-          message.delete(2500);
-
-		   }
-});
 
 client.login(process.env.BOT_TOKEN);
